@@ -1,0 +1,27 @@
+.floating-contacts {
+  right: 0;
+  top: 50%;
+  width: max-content;
+  transform: translateY(-50%);
+}
+
+.floating-contacts button {
+  background-color: transparent;
+  /*border: 2px solid whitesmoke;*/
+  color: #afafaf;
+  border-radius: 200px;
+  transition-duration: 300ms;
+}
+
+.floating-contacts button i {
+  /*color: whitesmoke;*/
+}
+
+.floating-contacts > button:hover {
+  border-color: #0e1d3b;
+  transform: scale(1.1);
+}
+
+.floating-contacts > button:hover i {
+  color: #0e1d3b;
+}

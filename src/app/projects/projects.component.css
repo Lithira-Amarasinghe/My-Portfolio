@@ -1,0 +1,13 @@
+.outer{
+  background-image: linear-gradient(to bottom right,#1F0E8E,#460D49);
+  min-height: 100vh;
+  width: 100vw;
+}
+.poppins-regular {
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.title{
+  font-size: 25pt;
+}

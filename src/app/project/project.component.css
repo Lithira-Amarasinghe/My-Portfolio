@@ -1,0 +1,20 @@
+.outer {
+  position: relative;
+  z-index: 1;
+  border-radius: 5px;
+  background-color: rgba(175, 175, 175, 0.46);
+}
+
+.outer img{
+  width: 100%;
+}
+
+.title{
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.tst{
+  width: fit-content;
+}

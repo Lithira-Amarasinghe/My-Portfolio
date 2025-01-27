@@ -1,0 +1,10 @@
+<div class="outer p-3 m-3">
+  <div class="title white mb-3">
+    {{project.name}}
+  </div>
+  <img class="border border-0 rounded" [src]="project.img" alt="">
+  <div class="description">
+    <ng-content select="description"></ng-content>
+  </div>
+  <mod-button class="my-3 mx-1">More</mod-button>
+</div>
