@@ -1,45 +1,12 @@
-<floating-contact></floating-contact>
-
-<nav-bar></nav-bar>
-
 <div class="outer">
-  <section class="intro d-flex justify-content-center align-items-center">
-    <div class="container text-center">
-      <div class="row align-items-start">
-        <div class="col-lg m-3 profile-pic">
-          <img src="scout-1.jpg" class="object-fit-fill border rounded border-0" alt="">
-        </div>
-        <div class="col-sm m-3 intro-content p-4 text-start">
-          <div class="greeting poppins-regular">
-            Hi, Welcome
-          </div>
-          <div class="name poppins-regular">
-            <span>LITHIRA </span>
-            <span>AMARASINGHE</span>
-          </div>
-          <div class="roles poppins-regular">
-            I'm a <span id="typewriter"></span>
-          </div>
-          <div class="content poppins-regular">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
-          </div>
-          <div class="contact d-flex justify-content-center align-items-center mt-3">
-            <mod-button class="mx-3 my-3">Contact Me</mod-button>
-            <mod-button class="mx-3 my-3"><i class="fa-brands fa-linkedin"></i></mod-button>
-            <mod-button class="mx-3 my-3"><i class="fa-brands fa-facebook"></i></mod-button>
-            <mod-button class="mx-3 my-3"><i class="fa-brands fa-instagram"></i></mod-button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <ngx-particles class="particles" [id]="id" [options]="particlesOptions"
-                 (particlesLoaded)="particlesLoaded($event)"></ngx-particles>
-</div>
-<section class="s">
+  <nav-bar></nav-bar>
+  <floating-contact></floating-contact>
+  <intro></intro>
   <projects></projects>
-</section>
+  <services-provide></services-provide>
+  <contact></contact>
 
-<router-outlet/>
+
+  <router-outlet/>
+
+</div>

@@ -9,6 +9,11 @@ import { ProjectComponent } from './project/project.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { FloatingContactComponent } from './floating-contact/floating-contact.component';
 import { ModButtonComponent } from './mod-button/mod-button.component';
+import { ContactComponent } from './contact/contact.component';
+import { IntroComponent } from './intro/intro.component';
+import { ServicesProvideComponent } from './services-provide/services-provide.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {provideHttpClient} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,15 +22,20 @@ import { ModButtonComponent } from './mod-button/mod-button.component';
     ProjectComponent,
     ProjectsComponent,
     FloatingContactComponent,
-    ModButtonComponent
+    ModButtonComponent,
+    ContactComponent,
+    IntroComponent,
+    ServicesProvideComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     NgxParticlesModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(),
   ],
   bootstrap: [AppComponent]
 })

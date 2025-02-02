@@ -1,7 +1,6 @@
 .floating-contacts {
   right: 0;
   top: 50%;
-  width: max-content;
   transform: translateY(-50%);
 }
 
@@ -10,6 +9,7 @@
   /*border: 2px solid whitesmoke;*/
   color: #afafaf;
   border-radius: 200px;
+  padding: 2px;
   transition-duration: 300ms;
 }
 

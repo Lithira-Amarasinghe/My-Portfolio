@@ -1,0 +1,104 @@
+.outer{
+  background-image: linear-gradient(to bottom right,#1F0E8E,#460D49, #3b0303);
+  position: relative!important;
+  top: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background-size: 200% 200%;
+  animation: background-anime 12s ease-in-out infinite;
+}
+.title{
+  width:100%;
+  background-color: rgba(175, 175, 175, 0.53);
+  position: relative;
+}
+.name {
+  font-size: 18pt;
+  padding: 10px 30px;
+  border-radius: 50px;
+  /*border: 0;*/
+  font-weight: 500;
+  /*background-color: #090a48;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 40px;
+  background-color: rgba(255, 255, 255, 0.29);
+  color: #0e1d3b;
+}
+
+.name::after {
+  content: '';
+  width: calc(100% + 8px); /* Increase width further on hover */
+  height: calc(100% + 8px); /* Slightly increase height */
+  border-radius: 50px;
+  position: absolute;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom right, #052F52, #52043E);
+  z-index:-1;
+  transition-duration: 500ms;
+}
+
+.line{
+  border: 5px solid #0e1d3b;
+  border-radius: 5px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-image: linear-gradient(to bottom right, #053157, #5b0645);
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 5px;
+}
+.sidebar-wrapper {
+  height: 100vh;
+  position: sticky;
+  border: 1px solid white;
+  top: 0;
+  /*display: flex;*/
+  /*align-items: center;*/
+}
+/*.sidebar {*/
+/*  position: relative; !* Prevent interference with sticky *!*/
+/*}*/
+.sidebar {
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24pt;
+  font-weight: bold;
+  color: #02023d;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  padding: 20px;
+  height: 95vh;
+  position: sticky;
+  top: 0;
+  /*align-self: flex-start; !* Ensures it respects sticky *!*/
+}
+
+.service-card {
+  /*width: 15vw;*/
+  height: 50vh;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+
+
+
+@keyframes background-anime {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
