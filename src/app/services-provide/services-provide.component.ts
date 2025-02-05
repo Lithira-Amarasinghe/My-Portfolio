@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {TechService} from "../types/techService";
 
 @Component({
   selector: 'services-provide',
@@ -6,5 +7,26 @@ import { Component } from '@angular/core';
   styleUrl: './services-provide.component.css'
 })
 export class ServicesProvideComponent {
-
+  techServices: TechService[] = [
+    {
+      title: 'Portfolio sites',
+      icon:'icons/online-resume.png',
+      image: "services/service-01.png",
+      description: 'Create a stunning portfolio website to showcase your work and attract more clients or opportunities.'
+    }, {
+      title: 'Online Ordering System',
+      image: "services/service-06.png",
+      icon:'icons/purchase.png',
+      description: 'Streamline sales with a user-friendly online ordering system, making purchasing easy for your customers.'
+    }, {
+      title: 'Digitize Processes',
+      image: "services/service-03.png",
+      icon:'icons/digital-business.png',
+      description: 'Transform manual tasks into efficient digital solutions, saving time and improving business productivity.'
+    }, {
+      title: 'Mobile Apps',
+      image: "services/service-05.png",
+      icon:'icons/app.png',
+      description: 'Professional mobile apps tailored to your needs, ensuring smooth performance on both Android and iOS.'
+    }]
 }

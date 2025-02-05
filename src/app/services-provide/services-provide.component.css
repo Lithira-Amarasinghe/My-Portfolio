@@ -69,27 +69,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24pt;
+  font-size: clamp(12pt, 6vw, 24pt);
   font-weight: bold;
   color: #02023d;
   writing-mode: vertical-rl;
   text-orientation: upright;
-  padding: 20px;
-  height: 95vh;
-  position: sticky;
+  padding: clamp(2px, 5vw, 20px);
+  height: 100vh;
   top: 0;
+  position: sticky;
+
   /*align-self: flex-start; !* Ensures it respects sticky *!*/
 }
 
-.service-card {
-  /*width: 15vw;*/
-  height: 50vh;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-}
-
-
-
+/*.service-card {*/
+/*  width: 15vw;*/
+/*  background: rgba(255, 255, 255, 0.2);*/
+/*  border-radius: 10px;*/
+/*}*/
 
 @keyframes background-anime {
   0% {

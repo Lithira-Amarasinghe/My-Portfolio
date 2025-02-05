@@ -12,5 +12,4 @@ export class ProjectsComponent {
     {name: 'SeriesOne', description: '', img: 'seriesone.png'},
     {name: 'RouteKnock', description: '', img: 'routeknock.png'}
   ];
-
 }

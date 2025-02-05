@@ -14,6 +14,12 @@ import { IntroComponent } from './intro/intro.component';
 import { ServicesProvideComponent } from './services-provide/services-provide.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {provideHttpClient} from "@angular/common/http";
+import { TechServiceComponent } from './tech-service/tech-service.component';
+import { ProjectDetailsComponent } from './project-details/project-details.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -25,13 +31,20 @@ import {provideHttpClient} from "@angular/common/http";
     ModButtonComponent,
     ContactComponent,
     IntroComponent,
-    ServicesProvideComponent
+    ServicesProvideComponent,
+    TechServiceComponent,
+    ProjectDetailsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    NgxParticlesModule
+    NgxParticlesModule,
+    MatDialogModule,
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [
     provideClientHydration(),

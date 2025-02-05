@@ -1,0 +1,100 @@
+.outer {
+  /*width: 200px;*/
+  overflow: hidden;
+  max-width: 500px;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  max-height: 500px;
+  padding: 2rem 3rem;
+  place-content: center;
+  border-radius: 8px;
+  background-size: cover;
+}
+
+.outer::after {
+  content: '';
+  z-index: -1;
+  inset: 5px;
+  position: absolute;
+  background-color: rgba(14, 29, 59, 0.96);
+  border-radius: 10px;
+}
+
+.outer:hover::before {
+  animation-play-state: paused;
+}
+.outer::before {
+  content: '';
+  height: 200%;
+  width: 200%;
+  position: absolute;
+  z-index: -3;
+  inset: -50%;
+  background-image: conic-gradient(
+    #234cd0 0deg,
+    transparent 60deg,
+    transparent 180deg,
+    #a30da8 180deg,
+    transparent 240deg);
+  animation: border-rider 15s linear infinite;
+}
+
+.image-outer{
+  border: 5px solid #c51a1a;
+  overflow: hidden;
+  height: 50%;
+}
+::ng-deep .image-outer img {
+  /*object-fit: contain;*/
+  width: 100%;
+  transition-duration: 0.5s;
+  height: 100%;
+  border: 1px solid rgba(255, 0, 0, 0);
+}
+.outer:hover .image-outer ::ng-deep img{
+  transform: scale(1.1);
+}
+
+.icon  {
+  transition-duration: 0.5s;
+}
+.icon{
+  width: fit-content;
+  background-color: #dcdcdc;
+  padding: 3px;
+}
+::ng-deep .icon img {
+  width: 40px;
+  /*filter: invert(1);*/
+
+}
+
+@keyframes border-rider {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+.title{
+  font-size: clamp(12pt, 8vw, 20pt);
+  font-family: "Belanosima", serif;
+  /*color: transparent;*/
+  color: #2c7fe0;
+  /*-webkit-text-stroke: 0.5px #a1c8f6;*/
+  transition-duration: 0.5s;
+}
+.outer:hover .title{
+transform:scale(1.1);
+  color: #2c7fe0;
+  /*-webkit-text-stroke-width: 0;*/
+}
+.description{
+   color: #e0e0e0;
+  text-align: center;
+  font-family: "Poppins", serif;
+  font-weight: 500;
+ }
+
+
+
+

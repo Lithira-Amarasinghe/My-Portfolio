@@ -1,63 +1,67 @@
-  <div class="outer d-flex justify-content-start align-items-center">
-    <div [@fadeIn] *ngIf="isVisible" class="container-fluid my-auto text-center">
-      <div class="row justify-content-evenly align-items-center">
-        <div class="profile-outer col-md-4 col col-10 m-3 ">
-          <div class="profile-pic m-auto">
-            <div class="profile-pic-content">
-              <img src="profile-3.png" class="object-fit-fill border rounded border-0" alt="">
-            </div>
+<div class="outer d-flex justify-content-start align-items-center">
+  <div [@fadeIn] *ngIf="isVisible" class="container-fluid my-auto text-center">
+    <div class="row justify-content-evenly align-items-center">
+      <div class="profile-outer col-md-4 col col-10 m-3 ">
+        <div class="profile-pic m-auto">
+          <div class="profile-pic-content">
+            <img src="profile-3.png" class="object-fit-fill border rounded border-0" alt="">
           </div>
         </div>
-        <div class="col-md-7 col-10 m-auto intro-content p-4 text-start">
-          <div class="greeting poppins-regular h4">
-            Hi, Welcome
-          </div>
-          <div class="name poppins-regular">
-            <span>LITHIRA </span>
-            <span>AMARASINGHE</span>
-          </div>
-          <div class="roles my-2 d-flex align-items-center poppins-regular">
-            <p class="static-txt">I'm a&nbsp;</p>
-            <div class="d-flex justify-content-center dynamic-txt-outer">
-              <ul class="dynamic-txt">
-                <li>Developer</li>
-                <li>Freelancer</li>
-                <li>Designer</li>
-              </ul>
-            </div>
-<!--            <div class="animation">-->
-<!--              <div class="first"><div>Web Developer</div></div>-->
-<!--              <div class="second"><div>Freelancer</div></div>-->
-<!--              <div class="third"><div>Software Developer</div></div>-->
-<!--            </div>-->
-            <!-- Element to contain animated typing -->
-
-
-<!--            <span class="element1"></span>-->
-            <h1>
-              <a href="" class="typewrite" data-period="2000" data-type='[ "Hi, Im Si.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
-                <span class="wrap"></span>
-              </a>
-            </h1>
-          </div>
-
-          <div class="content poppins-regular">
-            I'm a software developer with 3 years of experience.
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
-          </div>
-          <div class="contact d-flex justify-content-center flex-wrap align-items-center mt-3">
-            <mod-button class="mx-3 my-3">Contact Me</mod-button>
-            <mod-button class="mx-3 my-3"><i class="fa-brands fa-linkedin"></i></mod-button>
-            <mod-button class="mx-3 my-3"><i class="fa-brands fa-facebook"></i></mod-button>
-            <mod-button class="mx-3 my-3"><i class="fa-brands fa-instagram"></i></mod-button>
-            <mod-button (click)="downloadCV()" class="mx-3 my-3">Download CV</mod-button>
-          </div>
-
+      </div>
+      <div class="col-md-7 col-10 m-auto intro-content p-4 text-start">
+        <div class="greeting poppins-regular h4">
+          Hi, Welcome
         </div>
+        <div class="name poppins-regular">
+          <span>LITHIRA </span>
+          <span>AMARASINGHE</span>
+        </div>
+        <div class="roles my-2 d-flex align-items-center poppins-regular">
+          <p class="static-txt">I'm a&nbsp;</p>
+          <div class="d-flex justify-content-center dynamic-txt-outer">
+            <ul class="dynamic-txt">
+              <li>Developer</li>
+              <li>Freelancer</li>
+              <li>Designer</li>
+            </ul>
+          </div>
+          <!--            <div class="animation">-->
+          <!--              <div class="first"><div>Web Developer</div></div>-->
+          <!--              <div class="second"><div>Freelancer</div></div>-->
+          <!--              <div class="third"><div>Software Developer</div></div>-->
+          <!--            </div>-->
+          <!-- Element to contain animated typing -->
+
+
+          <!--            <span class="element1"></span>-->
+          <h1>
+            <a href="" class="typewrite" data-period="2000"
+               data-type='[ "Hi, Im Si.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
+              <span class="wrap"></span>
+            </a>
+          </h1>
+        </div>
+
+        <div class="content poppins-regular">
+          I'm a software developer with 3 years of experience in web and mobile app development. As a freelancer, I
+          create efficient, scalable, and user-friendly solutions. Passionate about problem-solving, I turn ideas into
+          high-quality digital products.
+        </div>
+        <div class="contact d-flex justify-content-center flex-wrap align-items-center mt-3">
+          <mod-button class="mx-3 my-3"><a href="#contact">Contact Me</a></mod-button>
+          <mod-button class="mx-3 my-3" (click)="navigateTo('https://www.linkedin.com/in/lithira-amarasinghe')">
+            <i class="fa-brands fa-linkedin"></i></mod-button>
+          <mod-button (click)="navigateTo('https://www.facebook.com/lithiraamarasinghe')" class="mx-3 my-3"><i
+            class="fa-brands fa-facebook"></i></mod-button>
+          <mod-button (click)="navigateTo('https://www.facebook.com/lithiraamarasinghe')" class="mx-3 my-3"><i
+            class="fa-brands fa-instagram"></i></mod-button>
+          <mod-button (click)="downloadCV()" class="mx-3 my-3">Download CV</mod-button>
+        </div>
+
       </div>
     </div>
   </div>
-  <ngx-particles class="particles" [id]="id" [options]="particlesOptions"
-                 (particlesLoaded)="particlesLoaded($event)"></ngx-particles>
+</div>
+<ngx-particles class="particles" [id]="id" [options]="particlesOptions"
+               (particlesLoaded)="particlesLoaded($event)"></ngx-particles>
 

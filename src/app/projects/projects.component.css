@@ -27,7 +27,7 @@
 }
 
 .name {
-  font-size: 30pt;
+  font-size: clamp(20pt, 8vw, 30pt);
   padding: 10px 30px;
   border-radius: 50px;
   border: 0;
