@@ -20,7 +20,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
-
+import { NgOptimizedImage } from '@angular/common'
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +33,8 @@ import {MatInputModule} from "@angular/material/input";
     IntroComponent,
     ServicesProvideComponent,
     TechServiceComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -44,10 +45,11 @@ import {MatInputModule} from "@angular/material/input";
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    NgOptimizedImage
   ],
   providers: [
-    provideClientHydration(),
+    // provideClientHydration(),
     provideHttpClient(),
   ],
   bootstrap: [AppComponent]

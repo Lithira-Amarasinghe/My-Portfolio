@@ -26,7 +26,7 @@
   <div class="flex-grow-1 d-flex flex-wrap justify-content-around">
     @for (service of techServices; track service.title) {
     <tech-service [service]=service class="col-10 col-md-5 col-lg-4 col-xl-3 mx-2 service-outer">
-      <ng-container class="image"><img [src]="service.image" alt="service"></ng-container>
+      <ng-container class="image"><img [ngSrc]="service.image" height="1000" width="1000" priority alt="service"></ng-container>
       <ng-container class="title">
     {{service.title}}
     </ng-container>

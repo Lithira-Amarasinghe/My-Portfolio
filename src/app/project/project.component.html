@@ -3,10 +3,10 @@
     {{project.name}}
   </div>
   <div class="img-outer w-5 border border-0 rounded">
-    <img class="rounded" [src]="project.img" alt="">
+    <img class="rounded" cover height="1000" width="1000" [ngSrc]="project.img" alt="">
   </div>
   <div class="description">
     <ng-content select="description"></ng-content>
   </div>
-  <mod-button (click)="openMoreDetails()" class="my-3 mx-1">More</mod-button>
+  <mod-button (click)="openMoreDetails()" class="my-3  mx-1">More</mod-button>
 </div>

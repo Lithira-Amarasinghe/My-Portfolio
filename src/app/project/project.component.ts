@@ -5,7 +5,7 @@ import {ProjectDetailsComponent} from "../project-details/project-details.compon
 @Component({
   selector: 'project',
   templateUrl: './project.component.html',
-  styleUrl: './project.component.css'
+  styleUrl: './project.component.css',
 })
 export class ProjectComponent {
   @Input('project') project: any = "";

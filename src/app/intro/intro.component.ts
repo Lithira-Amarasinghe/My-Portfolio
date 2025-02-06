@@ -1,40 +1,28 @@
-import {AfterViewInit, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
+import {AfterContentInit, AfterViewInit, Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {Container, Engine, MoveDirection, OutMode} from "@tsparticles/engine";
 import {NgParticlesService} from "@tsparticles/angular";
 import {loadFull} from "tsparticles";
-import Typewriter from "typewriter-effect";
 import {animate, style, transition, trigger} from "@angular/animations";
 import {isPlatformBrowser} from "@angular/common";
-import Typed from 'typed.js';
-import {isTypedArray} from "util/types";
 
 @Component({
   selector: 'intro',
   templateUrl: './intro.component.html',
   styleUrl: './intro.component.scss',
-  animations:[
+  animations: [
     trigger('fadeIn', [
       transition(':enter', [
-        style({opacity:0, transform: 'translateY(50px)'}),
-        animate('1000ms ease-out',style({opacity:1, transform: 'translateY(0)'})),
+        style({opacity: 0, transform: 'translateY(50px)'}),
+        animate('1000ms ease-out', style({opacity: 1, transform: 'translateY(0)'})),
       ]),
     ]),
   ]
 })
-export class IntroComponent implements OnInit, AfterViewInit{
+export class IntroComponent implements OnInit, AfterViewInit, AfterContentInit {
   id = "tsparticles";
-  private isBrowser: boolean=false;
-  isVisible: boolean=false;
-
-  constructor(private readonly ngParticlesService: NgParticlesService,
-              @Inject(PLATFORM_ID) private platformId: Object) {}
-
-  navigateTo(url: string): void {
-    window.open(url, '_blank', 'noopener,noreferrer'); // Opens in a new tab
-  }
-
+  isVisible: boolean = false;
   /* or the classic JavaScript object */
-  public particlesOptions:any= {
+  public particlesOptions: any = {
     background: {
       color: {
         value: "#125acb",
@@ -98,16 +86,22 @@ export class IntroComponent implements OnInit, AfterViewInit{
         type: "circle",
       },
       size: {
-        value: { min: 1, max: 5 },
+        value: {min: 1, max: 5},
       },
     },
     detectRetina: true,
   };
+  private isBrowser: boolean = false;
 
+  constructor(private readonly ngParticlesService: NgParticlesService,
+              @Inject(PLATFORM_ID) private platformId: Object) {
+  }
+
+  navigateTo(url: string): void {
+    window.open(url, '_blank', 'noopener,noreferrer'); // Opens in a new tab
+  }
 
   ngOnInit(): void {
-
-
   }
 
   particlesLoaded(container: Container): void {
@@ -118,18 +112,9 @@ export class IntroComponent implements OnInit, AfterViewInit{
   ngAfterViewInit(): void {
 
     this.isBrowser = isPlatformBrowser(this.platformId);
-    if(this.isBrowser){
-      // setTimeout(()=>{
-        // const typed:Typed = new Typed('.element1', {
-        //   strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
-        //   typeSpeed: 50,
-        //
-        // })
-      // },2000);
-      this.isVisible = true;  // After a short delay, make the element visible
-    }
+    this.isVisible = true;  // After a short delay, make the element visible
 
-    this.ngParticlesService.init(async (engine:Engine) => {
+    this.ngParticlesService.init(async (engine: Engine) => {
       console.log(engine);
 
       // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
@@ -137,13 +122,6 @@ export class IntroComponent implements OnInit, AfterViewInit{
       // starting from v2 you can add only the features you need reducing the bundle size
       await loadFull(engine);
       // await loadSlim(engine);
-    });
-
-    var app = document.getElementById('typewriter');
-    console.log(app)
-    let typewriter = new Typewriter(app, {
-      strings: ['DEVELOPER', 'FREELANCER'],
-      autoStart: true,
     });
   }
 
@@ -156,5 +134,8 @@ export class IntroComponent implements OnInit, AfterViewInit{
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+  }
+
+  ngAfterContentInit(): void {
   }
 }
