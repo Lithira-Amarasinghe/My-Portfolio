@@ -1,5 +1,6 @@
 <div class="outer pt-3">
-  <div class="d-flex col-lg-10 m-auto flex-column-reverse flex-md-row justify-content-center align-items-center align-items-md-start p-4 card bg-primary-dark text-light">
+  <div
+    class="d-flex col-lg-10 m-auto flex-column-reverse flex-md-row justify-content-center align-items-center align-items-md-start p-4 card bg-primary-dark text-light">
     <!-- Left Side (Hidden in Small Screens) -->
     <div class="order-0 order-sm-1 d-md-flex  flex-column align-items-center p-4">
       <img src="profile-4.jpg" alt="Profile Image" class="profile-pic d-none d-sm-block rounded-3 img-fluid">
@@ -22,26 +23,39 @@
       <p class="text-secondary">Always available for freelancing if the right project comes along. Feel free to contact
         me.</p>
 
-      <form class="position-relative z-1">
+      <form (ngSubmit)="sendMessage()" #contactForm="ngForm" class="position-relative z-1">
         <div class="d-flex flex-column flex-md-row gap-3">
           <div class="flex-grow-1">
-            <label class="form-label">First Name</label>
-            <input type="text" class="form-control" placeholder="Name *">
+            <label for="name" class="form-label">First Name</label>
+            <input required [(ngModel)]="message.name" id="name" name="name" type="text" class="form-control"
+                   placeholder="Name *">
           </div>
           <div class="flex-grow-1">
-            <label class="form-label">Your Email</label>
-            <input type="email" class="form-control" placeholder="Email *">
+            <label for="email" class="form-label">Your Email</label>
+            <input #email="ngModel" required [(ngModel)]="message.email" name="email" id="email" type="email" class="form-control"
+                   placeholder="Email *">
+            <div [hidden]="email.valid || email.pristine"
+                 class="alert alert-danger">
+              Email is required
+            </div></div>
+        </div>
+        <div class="mt-3">
+          <label for="subject" class="form-label">Subject</label>
+          <input [(ngModel)]="message.subject" name="subject" id="subject" type="text" class="form-control"
+                 placeholder="Subject *">
+        </div>
+        <div class="mt-3">
+          <label for="message" class="form-label">Your Message</label>
+          <textarea required [(ngModel)]="message.message" name="message"
+                    #msg="ngModel" id="message" class="form-control" rows="4"
+                    placeholder="Your message *"></textarea>
+
+          <div [hidden]="msg.valid || msg.pristine"
+               class="alert alert-danger">
+            Message is required
           </div>
         </div>
-        <div class="mt-3">
-          <label class="form-label">Subject</label>
-          <input type="text" class="form-control" placeholder="Subject *">
-        </div>
-        <div class="mt-3">
-          <label class="form-label">Your Message</label>
-          <textarea class="form-control" rows="4" placeholder="Your message *"></textarea>
-        </div>
-        <mod-button type="submit" class="w-100 py-2 mt-3">SEND MESSAGE</mod-button>
+        <mod-button [disabled]="!contactForm.form.valid" type="submit" class="w-100 py-2 mt-3">SEND MESSAGE</mod-button>
       </form>
     </div>
   </div>

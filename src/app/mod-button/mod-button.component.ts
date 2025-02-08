@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'mod-button',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './mod-button.component.css'
 })
 export class ModButtonComponent {
+  @Input('disabled') disabled: boolean = false;
+  @Input('type') type: string = 'button';
+
 
 }

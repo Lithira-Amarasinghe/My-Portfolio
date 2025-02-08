@@ -21,6 +21,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import { NgOptimizedImage } from '@angular/common'
+import {NgToastModule} from "ng-angular-popup";
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,8 +45,10 @@ import { NgOptimizedImage } from '@angular/common'
     MatDialogModule,
     MatButtonModule,
     FormsModule,
+    MatInputModule,
     ReactiveFormsModule,
     MatInputModule,
+    NgToastModule,
     NgOptimizedImage
   ],
   providers: [

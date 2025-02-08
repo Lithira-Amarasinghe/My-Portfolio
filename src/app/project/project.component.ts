@@ -1,6 +1,7 @@
 import {Component, inject, Input, model, signal} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {ProjectDetailsComponent} from "../project-details/project-details.component";
+import {Project} from "../types/project";
 
 @Component({
   selector: 'project',
@@ -8,14 +9,14 @@ import {ProjectDetailsComponent} from "../project-details/project-details.compon
   styleUrl: './project.component.css',
 })
 export class ProjectComponent {
-  @Input('project') project: any = "";
+  @Input('project') project!: Project;
   readonly animal = signal('');
   readonly name = model('');
   readonly dialog = inject(MatDialog);
 
   openMoreDetails() {
     const dialogRef = this.dialog.open(ProjectDetailsComponent, {
-      data: {name: this.name(), animal: this.animal()},
+      data: this.project,
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -1,12 +1,14 @@
-<h2 mat-dialog-title>Hi {{data.name}}</h2>
-<mat-dialog-content>
-  <p>What's your favorite animal?</p>
-  <mat-form-field>
-    <mat-label>Favorite Animal</mat-label>
-    <input matInput [(ngModel)]="animal" />
-  </mat-form-field>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="animal()" cdkFocusInitial>Ok</button>
-</mat-dialog-actions>
+<div class="outer">
+
+  <h2 mat-dialog-title>{{data.name}}</h2>
+  <mat-dialog-content>
+    <img class="project-img" [src]="data.image" alt="">
+    <p>{{data.description}}</p>
+  </mat-dialog-content>
+  <div matDialogActions align="end">
+    <span class="position-relative z-1" matDialogClose mat-button>
+      <mod-button>Close</mod-button>
+    </span>
+    <!--  <button mat-button [mat-dialog-close]="animal()" cdkFocusInitial>Ok</button>-->
+  </div>
+</div>

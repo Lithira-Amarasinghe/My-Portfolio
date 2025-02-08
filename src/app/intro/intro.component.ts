@@ -91,10 +91,11 @@ export class IntroComponent implements OnInit, AfterViewInit, AfterContentInit {
     },
     detectRetina: true,
   };
-  private isBrowser: boolean = false;
+  isBrowser: boolean = false;
 
   constructor(private readonly ngParticlesService: NgParticlesService,
               @Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   navigateTo(url: string): void {
@@ -111,18 +112,18 @@ export class IntroComponent implements OnInit, AfterViewInit, AfterContentInit {
 
   ngAfterViewInit(): void {
 
-    this.isBrowser = isPlatformBrowser(this.platformId);
-    this.isVisible = true;  // After a short delay, make the element visible
 
-    this.ngParticlesService.init(async (engine: Engine) => {
-      console.log(engine);
+    if(this.isBrowser) {
+      this.ngParticlesService.init(async (engine: Engine) => {
+        console.log(engine);
 
-      // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      await loadFull(engine);
-      // await loadSlim(engine);
-    });
+        // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
+        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
+        // starting from v2 you can add only the features you need reducing the bundle size
+        await loadFull(engine);
+        // await loadSlim(engine);
+      });
+    }
   }
 
 
@@ -137,5 +138,8 @@ export class IntroComponent implements OnInit, AfterViewInit, AfterContentInit {
   }
 
   ngAfterContentInit(): void {
+    if(isPlatformBrowser(this.platformId)){
+        this.isVisible = true;  // After a short delay, make the element visible
+    }
   }
 }

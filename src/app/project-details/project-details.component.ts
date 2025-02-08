@@ -1,5 +1,6 @@
 import {Component, inject, model} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {Project} from "../types/project";
 
 export interface DialogData {
   animal: string;
@@ -13,10 +14,11 @@ export interface DialogData {
 })
 export class ProjectDetailsComponent {
   readonly dialogRef = inject(MatDialogRef<ProjectDetailsComponent>);
-  readonly data = inject<DialogData>(MAT_DIALOG_DATA);
-  readonly animal = model(this.data.animal);
+  readonly data = inject<Project>(MAT_DIALOG_DATA);
 
   onNoClick(): void {
     this.dialogRef.close();
   }
+
+
 }

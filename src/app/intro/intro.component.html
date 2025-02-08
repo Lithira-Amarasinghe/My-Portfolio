@@ -22,18 +22,8 @@
             <ul class="dynamic-txt">
               <li>Developer</li>
               <li>Freelancer</li>
-              <li>Designer</li>
             </ul>
           </div>
-          <!--            <div class="animation">-->
-          <!--              <div class="first"><div>Web Developer</div></div>-->
-          <!--              <div class="second"><div>Freelancer</div></div>-->
-          <!--              <div class="third"><div>Software Developer</div></div>-->
-          <!--            </div>-->
-          <!-- Element to contain animated typing -->
-
-
-          <!--            <span class="element1"></span>-->
           <h1>
             <a href="" class="typewrite" data-period="2000"
                data-type='[ "Hi, Im Si.", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
@@ -62,6 +52,6 @@
     </div>
   </div>
 </div>
-<ngx-particles class="particles" [id]="id" [options]="particlesOptions"
+<ngx-particles *ngIf="isBrowser" class="particles" [id]="id" [options]="particlesOptions"
                (particlesLoaded)="particlesLoaded($event)"></ngx-particles>
 
