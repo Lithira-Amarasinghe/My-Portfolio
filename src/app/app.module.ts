@@ -52,7 +52,7 @@ import {NgToastModule} from "ng-angular-popup";
     NgOptimizedImage
   ],
   providers: [
-    // provideClientHydration(),
+    provideClientHydration(),
     provideHttpClient(),
   ],
   bootstrap: [AppComponent]
